@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="749.0" prefWidth="848.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Experiment">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="317.0" text="Slit Type">
+                           <font>
+                              <Font name="Trebuchet MS" size="18.0" />
+                           </font>
+                        </TextField>
+                        <RadioButton layoutX="55.0" layoutY="53.0" mnemonicParsing="false" text="Single Slit" />
+                        <RadioButton layoutX="55.0" layoutY="80.0" mnemonicParsing="false" text="Double Slit" />
+                        <TextField layoutX="14.0" layoutY="128.0" prefHeight="33.0" prefWidth="223.0" text="Separation of Slits (mm)">
+                           <font>
+                              <Font name="Trebuchet MS" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Slider fx:id="separationSlider" layoutX="15.0" layoutY="173.0" majorTickUnit="5.0" max="10.0" minorTickCount="20" prefHeight="65.0" prefWidth="319.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Slider>
+                        <TextField alignment="CENTER" layoutX="22.0" layoutY="253.0" prefHeight="33.0" prefWidth="307.0" text="Wavelength (nm)">
+                           <font>
+                              <Font name="Trebuchet MS" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField alignment="CENTER" layoutX="22.0" layoutY="365.0" text="Slit Width (mm)">
+                           <font>
+                              <Font name="Trebuchet MS" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Slider fx:id="wavelengthSlider" blockIncrement="100.0" layoutX="15.0" layoutY="294.0" majorTickUnit="20.0" max="700.0" min="400.0" minorTickCount="20" prefHeight="65.0" prefWidth="314.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="400.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Slider>
+                        <Slider fx:id="widthSlider" blockIncrement="3.0" layoutX="15.0" layoutY="406.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="5" prefHeight="65.0" prefWidth="322.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.5">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Slider>
+                        <LineChart fx:id="graph" createSymbols="false" horizontalGridLinesVisible="false" layoutX="337.0" layoutY="38.0" legendVisible="false" title="Intensity Profile">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis minorTickCount="3" side="LEFT" upperBound="2.0" />
+                          </yAxis>
+                        </LineChart>
+                        <ImageView fitHeight="241.0" fitWidth="434.0" layoutX="390.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Theory">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea layoutX="35.0" layoutY="62.0" prefHeight="299.0" prefWidth="749.0" text="Diffraction is the tendency of a wave emitted from a finite source or passing through a&#10;finite aperture to spread out as it propagates.  Diffraction results from the interference&#10;of an infinite number of waves emitted by a continuous distribution of source&#10;points.  According to Huygens' principle every point on a wave front of light can be&#10;considered to be a secondary source of spherical wavelets.  These wavelets propagate &#10;outward with the characteristic speed of the wave.  The wavelets emitted by all points on &#10;the wave front interfere with each other to produce the traveling wave.  Huygens' principle&#10;also holds for electromagnetic waves.  When studying the propagation of light, we can &#10;replace any wave front by a collection of sources distributed uniformly over the wave front, &#10;radiating in phase.&#10;" />
+                        <TextField layoutX="35.0" layoutY="14.0" text="Diffraction Theory" />
+                        <TextField alignment="CENTER" layoutX="35.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Single Slit Theory" />
+                        <ImageView fitHeight="232.0" fitWidth="352.0" layoutX="35.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@sinslit.png" />
+                           </image>
+                        </ImageView>
+                        <TextField alignment="CENTER" layoutX="442.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Single Slit Theory" />
+                        <ImageView fitHeight="223.0" fitWidth="298.0" layoutX="444.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@dubslit.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="About">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="305.0" fitWidth="347.0" layoutX="45.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@nedmeme.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="300.0" fitWidth="360.0" layoutX="397.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@diffractionmeme.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="45.0" layoutY="34.0" prefHeight="39.0" prefWidth="628.0" text="Created by: James Stevenson and Matt Zech" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
