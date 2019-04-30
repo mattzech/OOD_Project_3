@@ -40,17 +40,21 @@ public class Controller implements Initializable {
 
     //testing graph, trying to figure it out
     @FXML
+    
     public void setGraph(){
         /*
         series.getData().clear();
         for(double x = -400; x <= 400; x += 1)
             series.getData().add(new XYChart.Data<Number,Number> (x, x));
-
         graph.getData().add(series);
         */
         System.out.println("vjksdl");
     }
 
+    /**
+     * Registers if the button is clicked
+     * @param event
+     */
     @FXML
     void clicked(ActionEvent event) {
         System.out.println("CLICKED");
