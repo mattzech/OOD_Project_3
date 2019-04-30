@@ -35,8 +35,8 @@
                               <Font name="Trebuchet MS" size="18.0" />
                            </font>
                         </TextField>
-                        <RadioButton fx:id="singleSlitButton" layoutX="55.0" layoutY="53.0" mnemonicParsing="false" text="Single Slit" />
-                        <RadioButton fx:id="doubleSlitButton" layoutX="55.0" layoutY="89.0" mnemonicParsing="false" text="Double Slit" />
+                        <RadioButton fx:id="singleSlitButton" layoutX="55.0" layoutY="53.0" mnemonicParsing="false" onAction="#singleClicked" text="Single Slit" />
+                        <RadioButton fx:id="doubleSlitButton" layoutX="55.0" layoutY="89.0" mnemonicParsing="false" onAction="#doubleClicked" text="Double Slit" />
                         <TextField editable="false" layoutX="14.0" layoutY="128.0" prefHeight="33.0" prefWidth="223.0" text="Separation of Slits (mm)">
                            <font>
                               <Font name="Trebuchet MS" size="18.0" />
@@ -84,15 +84,15 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea layoutX="35.0" layoutY="62.0" prefHeight="299.0" prefWidth="749.0" text="Diffraction is the tendency of a wave emitted from a finite source or passing through a&#10;finite aperture to spread out as it propagates.  Diffraction results from the interference&#10;of an infinite number of waves emitted by a continuous distribution of source&#10;points.  According to Huygens' principle every point on a wave front of light can be&#10;considered to be a secondary source of spherical wavelets.  These wavelets propagate &#10;outward with the characteristic speed of the wave.  The wavelets emitted by all points on &#10;the wave front interfere with each other to produce the traveling wave.  Huygens' principle&#10;also holds for electromagnetic waves.  When studying the propagation of light, we can &#10;replace any wave front by a collection of sources distributed uniformly over the wave front, &#10;radiating in phase.&#10;" />
-                        <TextField layoutX="35.0" layoutY="14.0" text="Diffraction Theory" />
-                        <TextField alignment="CENTER" layoutX="35.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Single Slit Theory" />
+                        <TextArea editable="false" layoutX="35.0" layoutY="62.0" prefHeight="299.0" prefWidth="749.0" text="Diffraction is the tendency of a wave emitted from a finite source or passing through a&#10;finite aperture to spread out as it propagates.  Diffraction results from the interference&#10;of an infinite number of waves emitted by a continuous distribution of source&#10;points.  According to Huygens' principle every point on a wave front of light can be&#10;considered to be a secondary source of spherical wavelets.  These wavelets propagate &#10;outward with the characteristic speed of the wave.  The wavelets emitted by all points on &#10;the wave front interfere with each other to produce the traveling wave.  Huygens' principle&#10;also holds for electromagnetic waves.  When studying the propagation of light, we can &#10;replace any wave front by a collection of sources distributed uniformly over the wave front, &#10;radiating in phase.&#10;" />
+                        <TextField editable="false" layoutX="35.0" layoutY="14.0" text="Diffraction Theory" />
+                        <TextField alignment="CENTER" editable="false" layoutX="35.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Single Slit Theory" />
                         <ImageView fitHeight="232.0" fitWidth="352.0" layoutX="35.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@sinslit.png" />
                            </image>
                         </ImageView>
-                        <TextField alignment="CENTER" layoutX="442.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Single Slit Theory" />
+                        <TextField alignment="CENTER" editable="false" layoutX="442.0" layoutY="375.0" prefHeight="39.0" prefWidth="300.0" text="Double Slit Theory" />
                         <ImageView fitHeight="223.0" fitWidth="298.0" layoutX="444.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@dubslit.png" />
@@ -115,7 +115,7 @@
                               <Image url="@diffractionmeme.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="45.0" layoutY="34.0" prefHeight="39.0" prefWidth="628.0" text="Created by: James Stevenson and Matt Zech" />
+                        <TextField editable="false" layoutX="45.0" layoutY="34.0" prefHeight="39.0" prefWidth="628.0" text="Created by: James Stevenson and Matt Zech" />
                      </children></AnchorPane>
               </content>
             </Tab>

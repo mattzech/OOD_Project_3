@@ -35,25 +35,52 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        singleSlitButton.setSelected(true);
         setGraph();
     }
 
     //testing graph, trying to figure it out
     @FXML
     public void setGraph(){
+        //example of how a double slit graph might work
         /*
         series.getData().clear();
-        for(double x = -400; x <= 400; x += 1)
-            series.getData().add(new XYChart.Data<Number,Number> (x, x));
-
+        for(double i = -100; i <= 100; i += .1)
+        {
+            SingleSlitIntensity yValue = new SingleSlitIntensity(i, wavelengthSlider.getValue(), widthSlider.getValue());
+            Theta theta = new Theta(i, wavelengthSlider.getValue(), widthSlider.getValue());
+            XValue xValue = new XValue(separationSlider.getValue(), theta);
+            series.getData().add(new XYChart.Data<Number,Number> (xValue.x, yValue.getSingleSlitIntensity()));
+        }
         graph.getData().add(series);
         */
-        System.out.println("vjksdl");
+    }
+
+    //for setGraph, use gets of each slider
+    @FXML
+    void clicked(ActionEvent event) {
+        if(singleSlitButton.isSelected())
+            setGraph();
+        else {
+            System.out.println("Double Slit Graph");
+            //graph double slit
+        }
     }
 
     @FXML
-    void clicked(ActionEvent event) {
-        System.out.println("CLICKED");
+    void singleClicked(ActionEvent event) {
+        if(doubleSlitButton.isSelected())
+            doubleSlitButton.setSelected(false);
+        if(!singleSlitButton.isSelected())
+            singleSlitButton.setSelected(true);
+        setGraph();
     }
-    //for setGraph, use gets of each slider
+
+    @FXML
+    void doubleClicked(ActionEvent event) {
+        if(singleSlitButton.isSelected())
+            singleSlitButton.setSelected(false);
+        if(!doubleSlitButton.isSelected())
+            doubleSlitButton.setSelected(true);
+    }
 }
