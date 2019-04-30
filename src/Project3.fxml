@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -15,7 +22,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <TabPane layoutX="14.0" layoutY="14.0" prefHeight="749.0" prefWidth="848.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -28,34 +35,34 @@
                               <Font name="Trebuchet MS" size="18.0" />
                            </font>
                         </TextField>
-                        <RadioButton layoutX="55.0" layoutY="53.0" mnemonicParsing="false" text="Single Slit" />
-                        <RadioButton layoutX="55.0" layoutY="80.0" mnemonicParsing="false" text="Double Slit" />
-                        <TextField layoutX="14.0" layoutY="128.0" prefHeight="33.0" prefWidth="223.0" text="Separation of Slits (mm)">
+                        <RadioButton fx:id="singleSlitButton" layoutX="55.0" layoutY="53.0" mnemonicParsing="false" text="Single Slit" />
+                        <RadioButton fx:id="doubleSlitButton" layoutX="55.0" layoutY="89.0" mnemonicParsing="false" text="Double Slit" />
+                        <TextField editable="false" layoutX="14.0" layoutY="128.0" prefHeight="33.0" prefWidth="223.0" text="Separation of Slits (mm)">
                            <font>
                               <Font name="Trebuchet MS" size="18.0" />
                            </font>
                         </TextField>
-                        <Slider fx:id="separationSlider" layoutX="15.0" layoutY="173.0" majorTickUnit="5.0" max="10.0" minorTickCount="20" prefHeight="65.0" prefWidth="319.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0">
+                        <Slider fx:id="separationSlider" layoutX="15.0" layoutY="173.0" majorTickUnit="5.0" max="10.0" minorTickCount="20" onMouseClicked="#clicked" prefHeight="65.0" prefWidth="319.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Slider>
-                        <TextField alignment="CENTER" layoutX="22.0" layoutY="253.0" prefHeight="33.0" prefWidth="307.0" text="Wavelength (nm)">
+                        <TextField alignment="CENTER" editable="false" layoutX="22.0" layoutY="253.0" prefHeight="33.0" prefWidth="307.0" text="Wavelength (nm)">
                            <font>
                               <Font name="Trebuchet MS" size="18.0" />
                            </font>
                         </TextField>
-                        <TextField alignment="CENTER" layoutX="22.0" layoutY="365.0" text="Slit Width (mm)">
+                        <TextField alignment="CENTER" editable="false" layoutX="22.0" layoutY="365.0" text="Slit Width (mm)">
                            <font>
                               <Font name="Trebuchet MS" size="18.0" />
                            </font>
                         </TextField>
-                        <Slider fx:id="wavelengthSlider" blockIncrement="100.0" layoutX="15.0" layoutY="294.0" majorTickUnit="20.0" max="700.0" min="400.0" minorTickCount="20" prefHeight="65.0" prefWidth="314.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="400.0">
+                        <Slider fx:id="wavelengthSlider" blockIncrement="100.0" layoutX="15.0" layoutY="294.0" majorTickUnit="20.0" max="700.0" min="400.0" minorTickCount="20" onMouseClicked="#clicked" prefHeight="65.0" prefWidth="314.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="400.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Slider>
-                        <Slider fx:id="widthSlider" blockIncrement="3.0" layoutX="15.0" layoutY="406.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="5" prefHeight="65.0" prefWidth="322.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.5">
+                        <Slider fx:id="widthSlider" blockIncrement="3.0" layoutX="15.0" layoutY="406.0" majorTickUnit="0.5" max="3.0" min="0.5" minorTickCount="5" onMouseClicked="#clicked" prefHeight="65.0" prefWidth="322.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.5">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
