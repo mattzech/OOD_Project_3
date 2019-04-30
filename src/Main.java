@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
+    /**
+     * Loads the scene builder and sets the GUI
+     */
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Project3.fxml"));
         primaryStage.setTitle("Optics Simulation");
@@ -14,6 +17,10 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Launches program
+     * @param args
+     */
     public static void main (String[] args) {
         launch(args);
     }
